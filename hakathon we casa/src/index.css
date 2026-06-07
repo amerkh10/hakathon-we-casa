@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  
+  --color-brand-navy: #0D1B2A;
+  --color-brand-orange: #E67E22;
+  --color-brand-dark: #070F18;
+  --color-brand-card: #152538;
+  --color-brand-border: #1E314A;
+  --color-brand-highlight: #2A4365;
+  --color-brand-text: #F8F9FA;
+  
+  --animate-pulse-fast: pulse-fast 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-scan: scan 2s ease-in-out infinite;
+
+  @keyframes pulse-fast {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .3; transform: scale(1.1); }
+  }
+  @keyframes scan {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+  }
+}
+
+/* Custom Base Styles */
+body {
+  font-family: var(--font-sans);
+  background-color: #070F18;
+  color: #F8F9FA;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbars for mobile feel but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom ring and interactive outlines matching shadcn styles */
+input:focus, button:focus {
+  outline: none;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(21, 37, 56, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
